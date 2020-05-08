@@ -1,0 +1,86 @@
+{
+	"name": "label-in-line",
+	"displayName": "Label In Line",
+	"description": "Do you work in very long code files, Where you have to use find ton of times. NOW YOU DON'T !!!",
+	"version": "1.0.1",
+	"publisher": "TusharSahaTonoy",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"repository": {
+		"url": "https://github.com/Microsoft/vscode-extension-samples"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"colors": [
+			{
+				"id": "labelInLine.labelBackground",
+				"description": "Background decoration color for large numbers",
+				"defaults": {
+					"dark": "#fffb00f1",
+					"light": "#fffb00f1",
+					"highContrast": "#fffb00f1"
+				}
+			},
+			{
+				"id": "labelInLine.groupBackground",
+				"description": "Background decoration color for large numbers",
+				"defaults": {
+					"dark": "#ff00aae5",
+					"light": "#ff00aae5",
+					"highContrast": "#ff00aae5"
+				}
+			}
+		],
+		"snippets": [
+			{
+				"language": "php",
+				"path": "./snippets/common.json"
+			},
+			{
+				"language": "java",
+				"path": "./snippets/common.json"
+			},
+			{
+				"language": "cpp",
+				"path": "./snippets/common.json"
+			},
+			{
+				"language": "c",
+				"path": "./snippets/common.json"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/python.json"
+			}
+		]
+	},
+	"keywords": [
+		"vscode",
+		"highlight",
+		"text",
+		"label",
+		"annotation",
+		"vsc",
+		"extension"
+	  ],
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "tslint -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^12.12.0",
+		"tslint": "^5.19.0",
+		"typescript": "^3.8.3",
+		"@types/vscode": "^1.32.0"
+	}
+}

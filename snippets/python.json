@@ -1,0 +1,15 @@
+{
+    "label" : {
+        "prefix": "#label",
+        "body": [
+            "# -----> $0 "
+        ]
+    },
+    "group" : {
+        "prefix": "#group",
+        "body": [
+            "# -----:: $0 "
+        ]
+    }
+
+}
