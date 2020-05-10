@@ -1,12 +1,14 @@
 {
-    "label" : {
+    "Label" : {
         "prefix": "#label",
+        "decription" : "It will print the text to start the comment // -----> . It doesn't not matter how many '-' but '>' is needed." ,
         "body": [
             "# -----> $0 "
         ]
     },
-    "group" : {
+    "Group" : {
         "prefix": "#group",
+        "decription" : "It will print the text to start the comment // -----:: . It doesn't not matter how many '-' but '>' is needed." ,
         "body": [
             "# -----:: $0 "
         ]
