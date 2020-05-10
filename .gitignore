@@ -1,4 +1,4 @@
 out
 node_modules
 .vscode
-label-in-line-1.0.1.vsix
+label-in-line-*.vsix
