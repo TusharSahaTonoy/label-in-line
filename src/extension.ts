@@ -3,11 +3,9 @@ import * as vscode from 'vscode';
 // this method is called when vs code is activated
 export function activate(context: vscode.ExtensionContext) {
 
-	console.log('Label in line is activated');
-
+	let enabled = true;
 	let timeout: NodeJS.Timer | undefined = undefined;
 
-	// create a decorator type that we use to decorate large numbers
 	const label = vscode.window.createTextEditorDecorationType({
 		color : "black",
 		backgroundColor: { id: 'labelInLine.labelBackground' }
@@ -16,14 +14,14 @@ export function activate(context: vscode.ExtensionContext) {
 	let activeEditor = vscode.window.activeTextEditor;
 
 	function updateDecorations() {
+
 		if (!activeEditor) {
-			return;
+				return;
 		}
 
 		let regEx = /\/\/ ?\-\-\-\-*> ?([a-zA-Z] ?)*/g;
 		let ext = activeEditor.document.fileName.split('.').pop();
 		
-		var n = ["Banana", "Orange", "Apple", "Mango"].includes("Mango");
 		switch (ext)
 		{
 			case "py":
@@ -35,12 +33,22 @@ export function activate(context: vscode.ExtensionContext) {
 		const labelInEditor: vscode.DecorationOptions[] = [];
 		let match;
 		while (match = regEx.exec(text)) {
-			const startPos = activeEditor.document.positionAt(match.index);
-			const endPos = activeEditor.document.positionAt(match.index + match[0].length);
+			
+			let start = match.index;
+			let end = match.index + match[0].length;
+			
+			if(!enabled)
+			{
+				start = end = 0;
+			}
+
+			const startPos = activeEditor.document.positionAt(start);
+			const endPos = activeEditor.document.positionAt(end);
+			
 			const decoration = { range: new vscode.Range(startPos, endPos)};
 			labelInEditor.push(decoration);
 		}
-		// activeEditor.setDecorations(smallNumberDecorationType, smallNumbers);
+
 		activeEditor.setDecorations(label, labelInEditor);
 	}
 
@@ -55,6 +63,15 @@ export function activate(context: vscode.ExtensionContext) {
 	if (activeEditor) {
 		triggerUpdateDecorations();
 	}
+
+	// register commands
+	let disposable = vscode.commands.registerCommand('labelInLine.toggle', () => {
+
+		enabled = !enabled; 
+		updateDecorations();
+	});
+
+	context.subscriptions.push(disposable);
 
 	vscode.window.onDidChangeActiveTextEditor(editor => {
 		activeEditor = editor;

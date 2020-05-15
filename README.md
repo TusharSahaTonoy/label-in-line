@@ -15,3 +15,13 @@ Press '#' in you code and press ctrl + space bar for suggestion and chose **'Lab
 - CPP
 - C
 - Python
+
+For color customization, in the user settings, add
+```
+"workbench.colorCustomizations": {
+	"labelInLine.labelBackground": "#ff00ff"
+}
+```
+
+### Disable the extension
+Go to command palette (Press Ctrl+ Shift + P). Run the command `Label In Line : Toggle`.

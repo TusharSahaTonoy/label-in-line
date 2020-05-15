@@ -2,7 +2,7 @@
 	"name": "label-in-line",
 	"displayName": "Label In Line",
 	"description": "Do you work in very long code files, Where you have to use find ton of times. NOW YOU DON'T !!!",
-
+	"icon" : "images/icon-128x128.png",
 	"version": "1.0.1",
 	"publisher": "TusharSahaTonoy",
 	"license": "MIT",
@@ -40,6 +40,14 @@
 				}
 			}
 		],
+
+		"commands": [
+			{
+				"command": "labelInLine.toggle",
+				"title": "Label In Line : Toggle"
+			}
+		],
+
 		"snippets": [
 			{
 				"language": "php",
