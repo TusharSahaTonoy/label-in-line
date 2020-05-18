@@ -63,6 +63,26 @@
 			{
 				"language": "blade",
 				"path": "./snippets/blade.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/common.json"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/common.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/common.json"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/common.json"
+			},
+			{
+				"language": "vue",
+				"path": "./snippets/common.json"
 			}
 		]
 	},

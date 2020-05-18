@@ -26,6 +26,10 @@ The main objective of this extension is to make a simple way to **highlight** a 
 - C
 - Python
 - Laravel Blade
+- JavaScript
+- TypeScript
+- React
+- vue
 
 For color customization, in the user settings, add
 ```
