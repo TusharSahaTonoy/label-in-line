@@ -15,6 +15,7 @@ Press '#' in you code and press ctrl + space bar for suggestion and chose **'Lab
 - CPP
 - C
 - Python
+- Laravel Blade
 
 For color customization, in the user settings, add
 ```

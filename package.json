@@ -29,15 +29,6 @@
 					"light": "#fffb00f1",
 					"highContrast": "#fffb00f1"
 				}
-			},
-			{
-				"id": "labelInLine.groupBackground",
-				"description": "Background decoration color for large numbers",
-				"defaults": {
-					"dark": "#ff00aae5",
-					"light": "#ff00aae5",
-					"highContrast": "#ff00aae5"
-				}
 			}
 		],
 
@@ -68,6 +59,10 @@
 			{
 				"language": "python",
 				"path": "./snippets/python.json"
+			},
+			{
+				"language": "blade",
+				"path": "./snippets/blade.json"
 			}
 		]
 	},

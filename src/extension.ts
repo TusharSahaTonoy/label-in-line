@@ -19,13 +19,19 @@ export function activate(context: vscode.ExtensionContext) {
 				return;
 		}
 
-		let regEx = /\/\/ ?\-\-\-\-*> ?([a-zA-Z] ?)*/g;
-		let ext = activeEditor.document.fileName.split('.').pop();
+		let regEx = /\/\/ ?\-\-\-\-*> *([a-zA-Z0-9]* *)*/g;
+		let ext = activeEditor.document.fileName.split('.');
 		
-		switch (ext)
+		switch (ext[ext.length-1])
 		{
 			case "py":
-				regEx = /# ?\-\-\-\-*> ?([a-zA-Z] ?)*/g;
+				regEx = /# ?\-\-\-\-*> *([a-zA-Z0-9]* *)*/g;
+				break;
+			case "php":
+				if(ext[ext.length-2] == "blade")
+				{
+					regEx = /\{\{\-\-\-+> *([a-zA-Z0-9] ?)* *-\-\}\}/g;
+				}
 				break;
 		}
 
