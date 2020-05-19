@@ -27,13 +27,20 @@ export function activate(context: vscode.ExtensionContext) {
 			case "py":
 				regEx = /# ?\-\-\-\-*> *([a-zA-Z0-9]* *)*/g;
 				break;
+				
 			case "php":
 				if(ext[ext.length-2] == "blade")
 				{
-					regEx = /\{\{\-\-\-+> *([a-zA-Z0-9] ?)* *-\-\}\}/g;
+					regEx = /\{\{\-\-\-+> *([a-zA-Z0-9] *)* *\-\-\}\}|\/\/ ?\-\-\-\-*> *([a-zA-Z0-9]* *)*/g;
 				}
 				break;
+			
+			case "html":
+				regEx = /\<\!\-\-\-+: *([a-zA-Z0-9] *)* *\-\-\>|\/\/ ?\-\-\-\-*> *([a-zA-Z0-9]* *)*/g;
+				break;
 		}
+
+		// vscode.window.showInformationMessage("Regex:"+regEx);
 
 		const text = activeEditor.document.getText();
 		const labelInEditor: vscode.DecorationOptions[] = [];

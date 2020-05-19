@@ -57,6 +57,10 @@
 				"path": "./snippets/common.json"
 			},
 			{
+				"language": "html",
+				"path": "./snippets/html.json"
+			},
+			{
 				"language": "python",
 				"path": "./snippets/python.json"
 			},

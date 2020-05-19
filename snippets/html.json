@@ -1,0 +1,10 @@
+{
+    "label" : {
+        "prefix": "#Label",
+        "decription" : "It will print the text to start the comment // -----: . It doesn't not matter how many '-' but ':' is needed." ,
+        "body": [
+            "<!---: $0 -->"
+        ]
+    }
+
+}

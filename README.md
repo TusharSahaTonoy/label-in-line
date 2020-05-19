@@ -16,6 +16,8 @@ The main objective of this extension is to make a simple way to **highlight** a 
 ### Simple Way To Highlight
 ![simple](images/label_preview.gif)
 
+![manul](images/manual_label.gif)
+
 ### Easier To Navigate
 ![navigate](images/scroll_preview.gif)
 
